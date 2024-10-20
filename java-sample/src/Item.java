@@ -1,53 +1,35 @@
-public class Item {
-    //atribut milik dari object Item.
-    private double itemPrice;
-    private String itemName;
-    private String itemCode;
-    private int itemStock;
+class Item {
+    private int itemPrice; // Menyimpan harga barang sebagai int.
+    private String itemName; // Menyimpan nama barang.
+    private String itemCode; // Menyimpan kode barang.
+    private int itemQty; // Menyimpan jumlah barang.
 
-    //Default constructor 
-    public Item(){}
-
-    public Item(String name, String code){
-        this.itemName = name;
-        this.itemCode = code;
-    }
-
-    public Item(double price, String code, String name){
-
-    }
-
-    public Item(String name, double price, String code){
-
-    }
-
-    //Konstruktor: dijalankan saat proses instansiasi. 
-    public Item(String code, String name, double price) {
+    public Item(String code, String name, int price, int qty) {
+        // Konstruktor untuk menginisialisasi barang dengan kode, nama, harga, dan jumlah.
         this.itemCode = code;
         this.itemName = name;
         this.itemPrice = price;
+        this.itemQty = qty;
     }
 
-    public int updateStock(int stockUpdate){
-        this.itemStock += stockUpdate;
-        return itemStock;
+    public int getSubTotal() {
+        // Menghitung subtotal barang (harga x jumlah) tanpa desimal.
+        return itemPrice * itemQty;
     }
 
-    public double getPrice() {
-        return itemPrice;
+    public int getPrice() {
+        return itemPrice; // Mengembalikan harga barang sebagai int.
     }
 
-    public String getCode(){
-        return itemCode;
+    public String getCode() {
+        return itemCode; // Mengembalikan kode barang.
     }
 
-    public String getName(){
-        return itemName;
+    public String getName() {
+        return itemName; // Mengembalikan nama barang.
     }
 
-    public int getStock(){
-        return itemStock;
+    public int getQty() {
+        return itemQty; // Mengembalikan jumlah barang.
     }
-
-    
 }
